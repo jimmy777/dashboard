@@ -1,0 +1,1 @@
+$(".gridster ul").gridster();

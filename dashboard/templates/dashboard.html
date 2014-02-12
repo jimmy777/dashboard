@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}D A S H B O A R D{% endblock %}</title>
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="/static/css/gridster.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css">
+    {% endblock %}
+    {% block widgetcss %}
+    {% endblock %}
+</head>
+
+<body>
+
+    {% block main %}
+    <section class="grid">
+        <div class="gridster">
+            <ul>
+                <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+            </ul>
+        </div>
+    </section>
+    {% endblock %}
+
+    {% block js %}
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/gridster.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+
+    <script>
+        var gridster;
+
+        $(function() {
+            gridster = $(".gridster > ul").gridster({
+                widget_margins: [10, 10],
+                widget_base_dimensions: [70, 70],
+                min_cols: 3
+            }).data('gridster');
+        });
+    </script>
+
+    {% endblock %}
+    {% block widgetjs %}
+    {% endblock %}
+</body>
+
+</html>
